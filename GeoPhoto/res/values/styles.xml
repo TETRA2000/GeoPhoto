@@ -2,12 +2,14 @@
 
     <color name="top_background">#007535</color>
 
-    <style name="BaseTheme" parent="android:Theme.Holo">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
-    </style>
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppTheme" parent="android:Theme.Holo">
 
-    <style name="TopTheme" parent="BaseTheme">
         <item name="android:windowBackground">@drawable/top_background</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
 
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
