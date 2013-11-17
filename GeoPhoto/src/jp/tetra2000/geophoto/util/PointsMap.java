@@ -42,6 +42,20 @@ public class PointsMap {
 		return result;
 	}
 	
+//	public static PointsMap create(Point[] array, int resolution) {
+//		PointsMap result = new PointsMap(resolution);
+//		
+//		Point[][] map = result.map;
+//		
+//		for(int i=0; i<resolution; i++) {
+//			for(int j=0; j<resolution; j++) {
+//				map[i][j] = array[i*resolution + j];
+//			}
+//		}
+//		
+//		return result;
+//	}
+	
 	public Point[] toPointArray() {
 		int len = map.length;
 		

@@ -20,4 +20,23 @@ public class PointsMapTest extends AndroidTestCase {
 		
 		fail();
 	}
+	
+//	public void testArrayからのCreate() {
+//		Point p1 = new Point(1,2);
+//		Point p2 = new Point(3,4);
+//		Point p3 = new Point(5,6);
+//		Point p4 = new Point(7,8);
+//		
+//		Point[][] expected = new PointsMap(2).map;
+//		expected[0][0] = p1;
+//		expected[0][1] = p2;
+//		expected[1][0] = p3;
+//		expected[1][1] = p4;
+//		
+//		Point[] array = {p1, p2, p3, p4};
+//		
+//		PointsMap actual = PointsMap.create(array, 2);
+//		
+//		assertEquals(expected, actual.map);
+//	}
 }
