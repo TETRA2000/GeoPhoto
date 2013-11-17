@@ -18,4 +18,9 @@ public class HeightPoint {
 				((HeightPoint)o).height == height;
 			
 	}
+	
+	public double[] toDoubleArray() {
+		double[] array = {this.latitude, this.longitude, this.height};
+		return array;
+	}
 }
