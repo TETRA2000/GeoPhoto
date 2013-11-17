@@ -7,6 +7,7 @@ public class PointsMap {
 	private static final Double BASE_INTERVAL = 360.0 / R;
 
 	public Point[][] map;
+	public double angle, sideLen, resolution;
 
 	public PointsMap(int sideLen) {
 		map = new Point[sideLen][sideLen];
@@ -20,9 +21,14 @@ public class PointsMap {
 	 *            in KM
 	 * @param resolution
 	 */
+	// コンストラクタでよかった…
 	public static PointsMap create(Point base, double angle, double sideLen,
 			int resolution) {
 		PointsMap result = new PointsMap(resolution);
+		
+		result.angle = angle;
+		result.sideLen = sideLen;
+		result.resolution = resolution;
 
 		final double X_ANGLE = angle - 45;
 		final double Y_ANGLE = angle + 45;
