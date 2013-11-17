@@ -11,7 +11,8 @@ public class Point
 	
 	@Override
 	public boolean equals(Object o) {
-		return	o.getClass() == getClass() ||
+		return	this == o ||
+				o.getClass() == getClass() &&
 				((HeightPoint)o).latitude == latitude &&
 				((HeightPoint)o).longitude == longitude;
 			
