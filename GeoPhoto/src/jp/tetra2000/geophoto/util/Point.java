@@ -8,4 +8,12 @@ public class Point
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return	o.getClass() == getClass() ||
+				((HeightPoint)o).latitude == latitude &&
+				((HeightPoint)o).longitude == longitude;
+			
+	}
 }
