@@ -26,16 +26,21 @@ public class YOLPHeight
 		mClient = new RestClient(BASE_URL);
 	}
 	
-	public HeightPoint[] getHeights(Point[] points) throws ClientProtocolException, IOException
+	public ArrayList<HeightPoint> getHeights(Point[] points) throws ClientProtocolException, IOException
 	{
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>(2);
 
         StringBuilder builder = new StringBuilder();
-        for(Point p : points) {
-            builder.append(p.latitude);
+        builder.append(points[0].latitude);
+        builder.append(",");
+        builder.append(points[0].longitude);
+        
+        int len = points.length;
+        for(int i=1; i<len; i++) {
             builder.append(",");
-            builder.append(p.longitude);
+            builder.append(points[i].latitude);
             builder.append(",");
+            builder.append(points[i].longitude);
         }
 
         params.add(new BasicNameValuePair("appid", APP_ID));
@@ -46,7 +51,7 @@ public class YOLPHeight
         return parseXml(response);
 	}
 
-    private HeightPoint[] parseXml(String source)  {
+    private ArrayList<HeightPoint> parseXml(String source)  {
         ArrayList<HeightPoint> result = new ArrayList<HeightPoint>();
 
         XmlPullParser xpp = Xml.newPullParser();
@@ -58,12 +63,12 @@ public class YOLPHeight
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if(eventType == XmlPullParser.START_TAG) {
-                    if(xpp.getName() == "Coordinates") {
+                    if(xpp.getName().equals("Coordinates")) {
                         String[] values = xpp.nextText().split(",");
                         double latitude = Double.parseDouble(values[0]);
                         double longitude = Double.parseDouble(values[1]);
                         buffer = new Point(latitude, longitude);
-                    } else if(xpp.getName() == "Altitude") {
+                    } else if(xpp.getName().equals("Altitude")) {
                         double height = Double.parseDouble(xpp.nextText());
 
                         HeightPoint heightPoint =
@@ -81,6 +86,6 @@ public class YOLPHeight
             return null;
         }
 
-        return (HeightPoint[]) result.toArray();
+        return result;
     }
 }
