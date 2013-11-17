@@ -23,12 +23,12 @@ public class StlFactory {
 		for (int i = 0; i < len - 1; i++) {
 			for (int j = 0; j < len - 1; j++) {
 				HeightPoint a1 = map[i][j];
-				HeightPoint b1 = map[i + 1][j];
-				HeightPoint c1 = map[i + 1][j + 1];
+				HeightPoint b1 = map[i + 1][j + 1];
+				HeightPoint c1 = map[i + 1][j];
 
 				HeightPoint a2 = map[i][j];
-				HeightPoint b2 = map[i + 1][j + 1];
-				HeightPoint c2 = map[i][j + 1];
+				HeightPoint b2 = map[i][j + 1];
+				HeightPoint c2 = map[i+1][j + 1];
 
 				result.add(new Triangle(a1.toDoubleArray(), b1.toDoubleArray(),
 						c1.toDoubleArray()));
