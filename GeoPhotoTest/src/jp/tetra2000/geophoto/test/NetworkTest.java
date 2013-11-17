@@ -7,6 +7,7 @@ import org.apache.http.client.ClientProtocolException;
 
 import jp.tetra2000.geophoto.network.YOLPHeight;
 import jp.tetra2000.geophoto.util.HeightPoint;
+import jp.tetra2000.geophoto.util.HeightPointMap;
 import jp.tetra2000.geophoto.util.Point;
 import jp.tetra2000.geophoto.util.PointsMap;
 import android.test.AndroidTestCase;
@@ -41,5 +42,16 @@ public class NetworkTest extends AndroidTestCase {
 
 		
 		assertEquals(actual.size(), 10*10);
+	}
+	
+	public void testHeightPointMapに変換() throws ClientProtocolException, IOException {
+		Point base = new Point(139.732293,35.663613);
+		PointsMap map = PointsMap.create(base, 30, 5, 10);
+		
+		ArrayList<HeightPoint> array = sut.getHeights(map.toPointArray());
+		
+		HeightPointMap heightPointMap = HeightPointMap.fromArray(array, 10);
+		
+		assertEquals(heightPointMap.map.length, 10);
 	}
 }
