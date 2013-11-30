@@ -39,7 +39,7 @@ public class LocationTest extends InstrumentationTestCase {
 		}
 		
 		assertTrue(updateFlag);
-		assertFalse(sut.latitude == Double.MAX_VALUE);
-		assertFalse(sut.longitude == Double.MAX_VALUE);
+		assertFalse(sut.getLatitude() == Double.MAX_VALUE);
+		assertFalse(sut.getLongitude() == Double.MAX_VALUE);
 	}
 }
