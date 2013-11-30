@@ -24,6 +24,7 @@ public class Location {
 //        	// TODO デバッグ用なので後で削除
 //        	String locationProvider = LocationManager.NETWORK_PROVIDER;
             mManager.requestLocationUpdates(locationProvider, 0, 0, listener);
+            started = true;
         }
     }
 
