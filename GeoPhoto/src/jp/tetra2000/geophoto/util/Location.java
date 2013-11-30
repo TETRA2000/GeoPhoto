@@ -10,7 +10,7 @@ public class Location {
     private LocationCallback mCallback;
     private boolean started=false;
 
-    public double latitude = Double.MAX_VALUE, longitude = Double.MAX_VALUE;
+    private double latitude = Double.MAX_VALUE, longitude = Double.MAX_VALUE;
 
     public Location(Context context) {
         mManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -33,6 +33,14 @@ public class Location {
             mManager.removeUpdates(listener);
             started = false;
         }
+    }
+    
+    public double getLatitude() {
+    	return latitude;
+    }
+    
+    public double getLongitude() {
+    	return longitude;
     }
     
     public void setCallback(LocationCallback callback) {
