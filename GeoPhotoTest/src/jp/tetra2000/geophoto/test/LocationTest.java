@@ -21,11 +21,7 @@ public class LocationTest extends InstrumentationTestCase {
 		};
 	}
 	
-	public void testStartメソッドが実行出来る() {
-		sut.start();
-	}
-	
-	public void testStopメソッドが実行出来る() {
+	public void testStart及びstopメソッドが実行出来る() {
 		sut.start();
 		sut.stop();
 	}
