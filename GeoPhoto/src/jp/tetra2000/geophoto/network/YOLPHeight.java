@@ -18,7 +18,7 @@ public class YOLPHeight
 {
 	private static final String BASE_URL
 		= "http://alt.search.olp.yahooapis.jp/OpenLocalPlatform/V1/getAltitude";
-    private static final String APP_ID = "dj0zaiZpPXpxVnpNYnNvZGxKWCZzPWNvbnN1bWVyc2VjcmV0Jng9ODY-";
+    private static final String APP_ID = "";
 	
 	private RestClient mClient;
 	
