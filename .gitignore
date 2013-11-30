@@ -33,6 +33,9 @@ proguard/
 #argoUML temp file
 *.zargo~
 
+#starUML temp file
+*.~ml
+
 #aide dropbox
 .aidedropbox
 
