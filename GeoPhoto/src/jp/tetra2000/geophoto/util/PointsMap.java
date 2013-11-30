@@ -7,7 +7,8 @@ public class PointsMap {
 	private static final Double BASE_INTERVAL = 360.0 / R;
 
 	public Point[][] map;
-	public double angle, sideLen, resolution;
+	public double angle, sideLen;
+	public int resolution;
 
 	public PointsMap(int sideLen) {
 		map = new Point[sideLen][sideLen];
