@@ -31,6 +31,7 @@ public class Location {
     public void stop() {
         if(started) {
             mManager.removeUpdates(listener);
+            started = false;
         }
     }
     
