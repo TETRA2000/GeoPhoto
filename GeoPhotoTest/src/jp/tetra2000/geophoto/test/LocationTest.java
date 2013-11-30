@@ -31,7 +31,7 @@ public class LocationTest extends InstrumentationTestCase {
 		
 		sut.start();
 		
-		for(int i=0; i<100; i++) {
+		for(int i=0; i<10; i++) {
 			if(updateFlag)
 				break;
 			
